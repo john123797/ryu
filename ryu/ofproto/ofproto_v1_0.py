@@ -75,6 +75,8 @@ OFPT_BARRIER_REQUEST = 18       # Controller/switch message
 OFPT_BARRIER_REPLY = 19  # Controller/switch message
 OFPT_QUEUE_GET_CONFIG_REQUEST = 20      # Controller/switch message
 OFPT_QUEUE_GET_CONFIG_REPLY = 21        # Controller/switch message
+OFPT_SKETCH_REQUEST = 40
+OFPT_SKETCH_REPLY = 41
 
 OFP_HEADER_PACK_STR = '!BBHI'
 OFP_HEADER_SIZE = 8
@@ -90,6 +92,10 @@ OFPC_FRAG_DROP = 1      # Drop fragments.
 OFPC_FRAG_REASM = 2     # Reassemble (only if OFPC_IP_REASM set).
 OFPC_FRAG_NX_MATCH = 3  # Make first fragments available for matching.
 OFPC_FRAG_MASK = 3
+
+OFP_SKETCH_PACK_STR = '!I'
+OFP_SKETCH_SIZE = 12
+assert (calcsize(OFP_SKETCH_PACK_STR) + OFP_HEADER_SIZE == OFP_SKETCH_SIZE)
 
 OFP_SWITCH_CONFIG_PACK_STR = '!HH'
 OFP_SWITCH_CONFIG_SIZE = 12
